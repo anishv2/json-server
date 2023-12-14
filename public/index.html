@@ -21,8 +21,7 @@
 			padding: 0;
 		}
 		body {
-			/* background-color: #baa8f0; */
-			background-color: #e3e0e0;
+			background-color: #f7f7f7;
 			font-family: 'Inter', sans-serif;
 		}
 		a {
@@ -37,10 +36,8 @@
 			flex-direction: column;
 		}
 		header {
-			padding: 40px 50px;
-			/* background-image: linear-gradient(#573dca, #261951); */
+			padding: 1.8rem 3rem;
 			background-color: #2b2f31;
-			/* background-color: #2e2f3046; */
 			color: #fff;
 		}
 		main {
@@ -48,8 +45,7 @@
 			max-width: 1200px;
 		}
 		main div .method-list .http-method {
-			background-color: #afb3b3;
-			/* color:#fff; */
+			background-color: #d4d8d8;
 			padding: 0.3rem 0.5rem;
 			border-radius: 0.375rem;
 			font-size: 0.9rem;
@@ -63,24 +59,19 @@
 		
 		main section .card {
 			border-radius: 0.5rem;
-			/* background-image: linear-gradient(#3a2695, #261951); */
-			box-shadow: 0 0 6px #7768bb;
-			/* background-image: linear-gradient(to right,#111111c7, #4d4c4c21),url(https://wallpapercave.com/wp/wJgNORn.jpg); */
 			background-size: cover;
 			padding: 1rem 0;
-			height: 150px;
+			max-height: 150px;
 			border: none;
 			transition: all 1s;
 		}
 		
 		main section .card:hover {
-			/* background-image: linear-gradient(#3b1b99,#644bd4); */
 			box-shadow: 4px 8px 8px #000;
 		}
 
 		main section .card .card-body p {
 			color: #fff;
-			/* font-size: 18px; */
 		}
 		.card-title {
 			font-weight: 600;
@@ -124,24 +115,26 @@
                       </svg>
                 </a>
             </div>
-            
 		</header>
 		<main class="container-fluid px-4">
 			<div class="py-2">
-				<p class="fs-4 pb-2">Resources</p>
-				<p class="fs-5 pb-2">To access and modify resources, you can use any HTTP method:</p>
-				<ul class="method-list d-flex flex-wrap p-0 gap-3">
+				<p class="fs-5 pb-2">Resources</p>
+				<p class="fs-6 pb-2">To access and modify resources, you can use any HTTP method:</p>
+				<ul class="method-list d-flex flex-wrap p-0 gap-2">
 					<span class="http-method">GET</span>
 					<span class="http-method">POST</span>
 					<span class="http-method">PUT</span>
 					<span class="http-method">PATCH</span>
 					<span class="http-method">DELETE</span>
 					<span class="http-method">OPTIONS</span>
-
 				</ul>
 			</div>
+
+			<div>
+				<p class="fs-6"> Click on any of these cards to get JSON.</p>
+			</div>
 			
-			<section class="row justify-content-center gap-3 px-4" id="api-section"></section>
+			<section class="row justify-content-center gap-4 p-2" id="api-section"></section>
 		</main>
 		<footer class="w-100">
 			<div class="text-center" id="copyright"></div>
@@ -218,7 +211,21 @@
 			description: 'List of ecommerce products',
 			url: baseUrl + 'products',
 			id: 9
-		}
+		},
+		{
+            title:'Images',
+            image:'https://sustainabletravel.org/wp-content/uploads/Blog-Header-Tropical-Rainforest-River.jpg',
+            description:'List of images included nature, wild, etc.',
+            url:baseUrl+'images',
+            id:10
+        },
+		{
+            title:'Users',
+            image:'https://www.goodhire.com/static/6c70805059a7f7043f2c2afa05882deb/ff4d6/Article-background-check-adjudication-963x418-1.png',
+            description:'List of random users',
+            url:baseUrl+'users',
+            id:11
+        }
 	
 	]
 
@@ -228,7 +235,7 @@
 		const cards = sorted.map(card => {
 			return `<a 
 					href=${card.url} 
-					class="card col-xl-3 col-lg-3 col-md-4 col-sm-12" 
+					class="card col-lg-3 col-md-4 col-sm-12" 
 					style="background-image:linear-gradient(to right,#2b2f31,#2e2f3046,#4d4c4c21),url(${card.image})">
 					<div class='card-body' >
 						<p class="card-title m-0 p-0">${card.title}</p>
